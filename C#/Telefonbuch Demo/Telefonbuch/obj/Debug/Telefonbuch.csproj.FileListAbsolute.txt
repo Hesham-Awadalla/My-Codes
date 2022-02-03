@@ -1,0 +1,30 @@
+C:\Users\MAUHOFM\Documents\GitHub\Hesham & Maurice\Telefonbuch\Telefonbuch\bin\Debug\Telefonbuch.exe.config
+C:\Users\MAUHOFM\Documents\GitHub\Hesham & Maurice\Telefonbuch\Telefonbuch\bin\Debug\Telefonbuch.exe
+C:\Users\MAUHOFM\Documents\GitHub\Hesham & Maurice\Telefonbuch\Telefonbuch\bin\Debug\Telefonbuch.pdb
+C:\Users\MAUHOFM\Documents\GitHub\Hesham & Maurice\Telefonbuch\Telefonbuch\obj\Debug\Telefonbuch.csproj.AssemblyReference.cache
+C:\Users\MAUHOFM\Documents\GitHub\Hesham & Maurice\Telefonbuch\Telefonbuch\obj\Debug\MainWindow.g.cs
+C:\Users\MAUHOFM\Documents\GitHub\Hesham & Maurice\Telefonbuch\Telefonbuch\obj\Debug\App.g.cs
+C:\Users\MAUHOFM\Documents\GitHub\Hesham & Maurice\Telefonbuch\Telefonbuch\obj\Debug\Telefonbuch_MarkupCompile.cache
+C:\Users\MAUHOFM\Documents\GitHub\Hesham & Maurice\Telefonbuch\Telefonbuch\obj\Debug\Telefonbuch_MarkupCompile.lref
+C:\Users\MAUHOFM\Documents\GitHub\Hesham & Maurice\Telefonbuch\Telefonbuch\obj\Debug\MainWindow.baml
+C:\Users\MAUHOFM\Documents\GitHub\Hesham & Maurice\Telefonbuch\Telefonbuch\obj\Debug\Telefonbuch.g.resources
+C:\Users\MAUHOFM\Documents\GitHub\Hesham & Maurice\Telefonbuch\Telefonbuch\obj\Debug\Telefonbuch.Properties.Resources.resources
+C:\Users\MAUHOFM\Documents\GitHub\Hesham & Maurice\Telefonbuch\Telefonbuch\obj\Debug\Telefonbuch.csproj.GenerateResource.cache
+C:\Users\MAUHOFM\Documents\GitHub\Hesham & Maurice\Telefonbuch\Telefonbuch\obj\Debug\Telefonbuch.csproj.CoreCompileInputs.cache
+C:\Users\MAUHOFM\Documents\GitHub\Hesham & Maurice\Telefonbuch\Telefonbuch\obj\Debug\Telefonbuch.exe
+C:\Users\MAUHOFM\Documents\GitHub\Hesham & Maurice\Telefonbuch\Telefonbuch\obj\Debug\Telefonbuch.pdb
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Die-Nerds\Telefonbuch\Telefonbuch\bin\Debug\Telefonbuch.exe.config
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Die-Nerds\Telefonbuch\Telefonbuch\bin\Debug\Telefonbuch.exe
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Die-Nerds\Telefonbuch\Telefonbuch\bin\Debug\Telefonbuch.pdb
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Die-Nerds\Telefonbuch\Telefonbuch\obj\Debug\Telefonbuch.csproj.AssemblyReference.cache
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Die-Nerds\Telefonbuch\Telefonbuch\obj\Debug\MainWindow.g.cs
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Die-Nerds\Telefonbuch\Telefonbuch\obj\Debug\App.g.cs
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Die-Nerds\Telefonbuch\Telefonbuch\obj\Debug\Telefonbuch_MarkupCompile.cache
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Die-Nerds\Telefonbuch\Telefonbuch\obj\Debug\Telefonbuch_MarkupCompile.lref
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Die-Nerds\Telefonbuch\Telefonbuch\obj\Debug\MainWindow.baml
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Die-Nerds\Telefonbuch\Telefonbuch\obj\Debug\Telefonbuch.g.resources
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Die-Nerds\Telefonbuch\Telefonbuch\obj\Debug\Telefonbuch.Properties.Resources.resources
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Die-Nerds\Telefonbuch\Telefonbuch\obj\Debug\Telefonbuch.csproj.GenerateResource.cache
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Die-Nerds\Telefonbuch\Telefonbuch\obj\Debug\Telefonbuch.csproj.CoreCompileInputs.cache
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Die-Nerds\Telefonbuch\Telefonbuch\obj\Debug\Telefonbuch.exe
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Die-Nerds\Telefonbuch\Telefonbuch\obj\Debug\Telefonbuch.pdb

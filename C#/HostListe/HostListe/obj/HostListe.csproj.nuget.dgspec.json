@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HEOSMAN\\OneDrive - studium.fernuni-hagen.de\\HostListe\\HostListe\\HostListe.csproj": {}
+    "C:\\Users\\HEOSMAN\\Documents\\#Mein Cloud\\Git\\My-Codes\\C#\\HostListe\\HostListe\\HostListe.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HEOSMAN\\OneDrive - studium.fernuni-hagen.de\\HostListe\\HostListe\\HostListe.csproj": {
+    "C:\\Users\\HEOSMAN\\Documents\\#Mein Cloud\\Git\\My-Codes\\C#\\HostListe\\HostListe\\HostListe.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HEOSMAN\\OneDrive - studium.fernuni-hagen.de\\HostListe\\HostListe\\HostListe.csproj",
+        "projectUniqueName": "C:\\Users\\HEOSMAN\\Documents\\#Mein Cloud\\Git\\My-Codes\\C#\\HostListe\\HostListe\\HostListe.csproj",
         "projectName": "HostListe",
-        "projectPath": "C:\\Users\\HEOSMAN\\OneDrive - studium.fernuni-hagen.de\\HostListe\\HostListe\\HostListe.csproj",
+        "projectPath": "C:\\Users\\HEOSMAN\\Documents\\#Mein Cloud\\Git\\My-Codes\\C#\\HostListe\\HostListe\\HostListe.csproj",
         "packagesPath": "C:\\Users\\HEOSMAN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HEOSMAN\\OneDrive - studium.fernuni-hagen.de\\HostListe\\HostListe\\obj\\",
+        "outputPath": "C:\\Users\\HEOSMAN\\Documents\\#Mein Cloud\\Git\\My-Codes\\C#\\HostListe\\HostListe\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

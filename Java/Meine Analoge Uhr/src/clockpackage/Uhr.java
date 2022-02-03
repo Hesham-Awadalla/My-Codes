@@ -2,6 +2,7 @@ package clockpackage;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -26,6 +27,7 @@ public class Uhr extends JPanel implements ActionListener
 	
 	Timer timer;
 	Image backgroundImage;
+	Dimension d;
 	
 	int Xm = 210, Ym = 210, r = 210;
 	
@@ -48,6 +50,8 @@ public class Uhr extends JPanel implements ActionListener
 	{
 		super.paintComponent(g);
 		Graphics2D g2D = (Graphics2D) g;
+		
+		d = getSize();
 		
 		g2D.drawImage(backgroundImage, 0, 0, null);
 		

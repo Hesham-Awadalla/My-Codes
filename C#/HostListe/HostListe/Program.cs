@@ -16,7 +16,7 @@ namespace HostListe
 
             //"Append": Wenn die Datei (z.B. HostlListe") noch nicht erstellt worden ist, dann wird sie erstellt,
             //und immer dazu hinzugefügt (Append).
-            string dateinameHostliste = "Hostliste.txt";  //Warum funktioniert aber nicht mit CSV??
+            string dateinameHostliste = "Hostliste.csv";  //Warum funktioniert aber nicht mit CSV??
             FileStream fileStreamHostliste = new FileStream(dateinameHostliste, FileMode.Append);
             StreamWriter streamWriter = new StreamWriter(fileStreamHostliste);
 
@@ -34,7 +34,7 @@ namespace HostListe
             while (!streamReader.EndOfStream)
             {
                 // Zeile für Zeile einlesen
-                zeile = streamReader.ReadLine();
+                zeile = streamReader.ReadLine() + "\n";
 
                 //Zeilenkomponenten speichern
                 zeilenkomponente = zeile.Split(';');

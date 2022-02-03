@@ -12,3 +12,17 @@ C:\Users\HEOSMAN\Documents\#Mein Cloud\IT-Schule\1. Schuljahr\BfK-S (SAE)\SAE-Pr
 C:\Users\HEOSMAN\Documents\#Mein Cloud\IT-Schule\1. Schuljahr\BfK-S (SAE)\SAE-Projekte\HostListe\HostListe\obj\Debug\netcoreapp3.1\HostListe.dll
 C:\Users\HEOSMAN\Documents\#Mein Cloud\IT-Schule\1. Schuljahr\BfK-S (SAE)\SAE-Projekte\HostListe\HostListe\obj\Debug\netcoreapp3.1\HostListe.pdb
 C:\Users\HEOSMAN\Documents\#Mein Cloud\IT-Schule\1. Schuljahr\BfK-S (SAE)\SAE-Projekte\HostListe\HostListe\obj\Debug\netcoreapp3.1\HostListe.genruntimeconfig.cache
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\My-Codes\C#\HostListe\HostListe\bin\Debug\netcoreapp3.1\HostListe.exe
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\My-Codes\C#\HostListe\HostListe\bin\Debug\netcoreapp3.1\HostListe.deps.json
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\My-Codes\C#\HostListe\HostListe\bin\Debug\netcoreapp3.1\HostListe.runtimeconfig.json
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\My-Codes\C#\HostListe\HostListe\bin\Debug\netcoreapp3.1\HostListe.runtimeconfig.dev.json
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\My-Codes\C#\HostListe\HostListe\bin\Debug\netcoreapp3.1\HostListe.dll
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\My-Codes\C#\HostListe\HostListe\bin\Debug\netcoreapp3.1\HostListe.pdb
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\My-Codes\C#\HostListe\HostListe\obj\Debug\netcoreapp3.1\HostListe.csproj.AssemblyReference.cache
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\My-Codes\C#\HostListe\HostListe\obj\Debug\netcoreapp3.1\HostListe.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\My-Codes\C#\HostListe\HostListe\obj\Debug\netcoreapp3.1\HostListe.AssemblyInfoInputs.cache
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\My-Codes\C#\HostListe\HostListe\obj\Debug\netcoreapp3.1\HostListe.AssemblyInfo.cs
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\My-Codes\C#\HostListe\HostListe\obj\Debug\netcoreapp3.1\HostListe.csproj.CoreCompileInputs.cache
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\My-Codes\C#\HostListe\HostListe\obj\Debug\netcoreapp3.1\HostListe.dll
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\My-Codes\C#\HostListe\HostListe\obj\Debug\netcoreapp3.1\HostListe.pdb
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\My-Codes\C#\HostListe\HostListe\obj\Debug\netcoreapp3.1\HostListe.genruntimeconfig.cache
