@@ -21,6 +21,7 @@ public class GUI extends JFrame implements ActionListener
 	private JPanel contentPane;
 	private JTextField textField;
 	private double result;
+	private JButton btnPunkt;
 	
 	net.objecthunter.exp4j.Expression expression;
 
@@ -40,6 +41,7 @@ public class GUI extends JFrame implements ActionListener
 			contentPane.setLayout(null);
 			
 			textField = new JTextField();			
+			textField.setEditable(false);
 			textField.setFont(new Font("Digital-7 Italic", Font.PLAIN, 25));
 			textField.setBounds(10, 11, 239, 47);
 			contentPane.add(textField);
@@ -124,7 +126,7 @@ public class GUI extends JFrame implements ActionListener
 			Tastenfeld.add(btn0);
 			btn0.addActionListener(this);
 			
-			JButton btnPunkt = new JButton(".");
+			btnPunkt = new JButton(".");
 			btnPunkt.setForeground(Color.RED);
 			btnPunkt.setFont(new Font("Palatino Linotype", Font.BOLD, 17));
 			Tastenfeld.add(btnPunkt);
@@ -227,6 +229,7 @@ public class GUI extends JFrame implements ActionListener
 		else if (e.getActionCommand() == ".")
 			{
 				textField.setText(textField.getText() + ".");
+				btnPunkt.setEnabled(false);  //was ist mit DEL??
 			}
 		else if (e.getActionCommand() == "DEL")
 			{
@@ -241,12 +244,20 @@ public class GUI extends JFrame implements ActionListener
 		else if (e.getActionCommand() == "CLR")
 			{
 				textField.setText("");
+				btnPunkt.setEnabled(true);
 			}
 		else if (e.getActionCommand() == "=")
 			{
-				expression = new ExpressionBuilder(textField.getText()).build();
-			    result = expression.evaluate();			    
-				textField.setText(String.valueOf(result));
+				try
+					{
+						expression = new ExpressionBuilder(textField.getText()).build();
+					    result = expression.evaluate();			    
+						textField.setText(String.valueOf(result));
+						btnPunkt.setEnabled(true);
+					} catch (ArithmeticException a)
+					{
+						textField.setText("Error");
+					}
 				//
 			}
 		else if (e.getActionCommand() == "Ans")
