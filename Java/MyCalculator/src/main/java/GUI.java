@@ -32,7 +32,8 @@ public class GUI extends JFrame implements ActionListener
 			setTitle("My Calculator");
 			setAlwaysOnTop(true);
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			setBounds(100, 100, 273, 373);
+			setBounds(100, 100, 273, 373);  //setSize + setLocationRelativeTo(null) ?
+			setLocationRelativeTo(null);
 			
 			contentPane = new JPanel();
 			contentPane.setBackground(new Color(0, 0, 51));
