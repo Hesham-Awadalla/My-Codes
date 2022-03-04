@@ -14,7 +14,7 @@ public class tools
     static ArrayList<String> resultInfo = new ArrayList<String>();
     
     //Eine neue Funktion listDir
-	public static void listDir(String path, String filetype) throws IOException
+	public static void listDir(String path, String filetype, int FileAge) throws IOException
 	{
 			
 	    File folder = new File(path); 
@@ -40,16 +40,16 @@ public class tools
 		            diff = (new Date().getTime() - fileLastMod)/2.628E9;  //Diff in Months!
 		            
 		            //Suche nach Kritieren "Dateityp" und "Dateialter-hier > 6 Monate"
-		            if (filesname.endsWith(filetype) && diff > 6 || filesname.endsWith(filetype.toUpperCase()) && diff > 6)
+		            if (filesname.endsWith(filetype) && diff > FileAge || filesname.endsWith(filetype.toUpperCase()) && diff > FileAge)
 		            	{
-		                resultInfo.add("zuletzt geändert am " + sdf.format(fileLastMod));
+		                resultInfo.add(sdf.format(fileLastMod)+"       ");
 		            	result.add(listOfFiles[i]);
 					    }
 				}
 	            else if (listOfFiles[i].isDirectory())
 	        	{
-	        		// ruft sich selbst mit dem Unterverzeichnis als Parameter auf
-	        		listDir(listOfFiles[i].getAbsolutePath(), filetype);	            		
+	        		// ruft sich selbst mit dem Unterverzeichnis als Parameter auf  "rekursive Suche"
+	        		listDir(listOfFiles[i].getAbsolutePath(), filetype, FileAge);	            		
 	        	}
 			}
 		}
