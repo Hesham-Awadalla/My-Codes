@@ -1,6 +1,7 @@
 import static javax.swing.JOptionPane.showMessageDialog;
 
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -43,11 +44,11 @@ public class GUI extends JFrame implements ActionListener
 	public GUI() throws IOException
 	{
 		setResizable(false);
-		setIconImage(new ImageIcon(this.getClass().getResource("/Mercedes-Benz-Logo.png")).getImage());
+		setIconImage(new ImageIcon(this.getClass().getResource("/Mercedes-Benz-Logo.png")).getImage().getScaledInstance(20, 20,  java.awt.Image.SCALE_SMOOTH));
 		setTitle("DTO Eraserbot");
 		setAlwaysOnTop(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setSize(859, 486);
+		setSize(859, 630);
 		setLocationRelativeTo(null);
 		
 		//New JPanel
@@ -64,20 +65,20 @@ public class GUI extends JFrame implements ActionListener
 		
 		JLabel lblNewLabel_3 = new JLabel("Nach welchem Dateityp möchtest du suchen?");
 		lblNewLabel_3.setFont(new Font("Arial", Font.PLAIN, 18));
-		lblNewLabel_3.setBounds(12, 369, 412, 30);
+		lblNewLabel_3.setBounds(12, 381, 412, 30);
 		contentPane.add(lblNewLabel_3);
 		
 		JButton btnNewButton = new JButton("Ergebnisse zeigen");
 		btnNewButton.addActionListener(this);
 		btnNewButton.setFont(new Font("Arial", Font.PLAIN, 15));
-		btnNewButton.setBounds(638, 370, 198, 30);
+		btnNewButton.setBounds(638, 382, 198, 30);
 		contentPane.add(btnNewButton);
 		
 		comboBox = new JComboBox();
 		comboBox.setToolTipText("Select an option");
 		comboBox.setFont(new Font("Arial", Font.PLAIN, 15));
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {".pdf", ".doc", ".docx", ".xlsx", ".csv", ".one"}));
-		comboBox.setBounds(402, 372, 149, 28);
+		comboBox.setBounds(402, 384, 149, 28);
 		contentPane.add(comboBox);
 		
 		scrollPane = new JScrollPane(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
@@ -90,25 +91,43 @@ public class GUI extends JFrame implements ActionListener
 		JButton btnNewButton_1 = new JButton("Datei löschen?");
 		btnNewButton_1.addActionListener(this);
 		btnNewButton_1.setFont(new Font("Arial", Font.PLAIN, 15));
-		btnNewButton_1.setBounds(638, 408, 198, 30);
+		btnNewButton_1.setBounds(638, 420, 198, 30);
 		contentPane.add(btnNewButton_1);
 		
-		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon(this.getClass().getResource("/DT1.png")));
+		/////
+		Image img = new ImageIcon(this.getClass().getResource("/DT0.jpg")).getImage();  
+		Image imgscaled = img.getScaledInstance(191, 76,  java.awt.Image.SCALE_SMOOTH);
+		ImageIcon newIcon = new ImageIcon(imgscaled);
+		
+		JLabel lblNewLabel_1 = new JLabel();	
+		//Die Lücke zwischen Text und Bild negativ setzen, so dass die Komponenten übereinander gezeichnet werden
+		//lblNewLabel_1.setIconTextGap(-200);
+		//lblNewLabel_1.setIcon(new ImageIcon(this.getClass().getResource("/DT0.png")));
+		lblNewLabel_1.setIcon(newIcon);
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setBounds(12, 19, 231, 53);
+		lblNewLabel_1.setBounds(12, 6, 191, 76);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_3_1 = new JLabel("Die gesuchten Dateien m\u00FCssen \u00E4lter als wie viele Monate?");
 		lblNewLabel_3_1.setFont(new Font("Arial", Font.PLAIN, 18));
-		lblNewLabel_3_1.setBounds(12, 407, 490, 30);
+		lblNewLabel_3_1.setBounds(12, 419, 490, 30);
 		contentPane.add(lblNewLabel_3_1);
 		
 		AnzahlMonate = new JTextField();
 		AnzahlMonate.setFont(new Font("Arial", Font.PLAIN, 17));
 		AnzahlMonate.setColumns(10);
-		AnzahlMonate.setBounds(501, 407, 49, 30);
+		AnzahlMonate.setBounds(501, 419, 49, 30);
 		contentPane.add(AnzahlMonate);
+		
+		Image img2 = new ImageIcon(this.getClass().getResource("/DT1.svg")).getImage();  
+		Image imgscaled2 = img2.getScaledInstance(843, 147,  java.awt.Image.SCALE_SMOOTH);  
+		ImageIcon newIcon2 = new ImageIcon(imgscaled2);
+		
+		JLabel lblNewLabel_2 = new JLabel("");
+		lblNewLabel_2.setIcon(newIcon2);
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_2.setBounds(0, 462, 843, 118);
+		contentPane.add(lblNewLabel_2);
 		
 	}
 	
