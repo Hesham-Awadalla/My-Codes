@@ -1,6 +1,7 @@
 import static javax.swing.JOptionPane.showMessageDialog;
 
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -47,7 +48,7 @@ public class GUI extends JFrame implements ActionListener
 		setTitle("DTO Eraserbot");
 		setAlwaysOnTop(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setSize(859, 486);
+		setSize(859, 587);
 		setLocationRelativeTo(null);
 		
 		//New JPanel
@@ -93,8 +94,14 @@ public class GUI extends JFrame implements ActionListener
 		btnNewButton_1.setBounds(638, 408, 198, 30);
 		contentPane.add(btnNewButton_1);
 		
+		/////
+		Image img = new ImageIcon(this.getClass().getResource("/DT1.jpg")).getImage();  
+		Image imgscaled = img.getScaledInstance(260, 70,  java.awt.Image.SCALE_SMOOTH);  
+		ImageIcon newIcon = new ImageIcon(imgscaled);
+		
 		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon(this.getClass().getResource("/DT1.png")));
+		//lblNewLabel_1.setIcon(new ImageIcon(this.getClass().getResource("/DT1.png")));
+		lblNewLabel_1.setIcon(newIcon);
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setBounds(12, 19, 231, 53);
 		contentPane.add(lblNewLabel_1);
@@ -109,6 +116,16 @@ public class GUI extends JFrame implements ActionListener
 		AnzahlMonate.setColumns(10);
 		AnzahlMonate.setBounds(501, 407, 49, 30);
 		contentPane.add(AnzahlMonate);
+		
+		Image img2 = new ImageIcon(this.getClass().getResource("/DT2.jpg")).getImage();  
+		Image imgscaled2 = img2.getScaledInstance(843, 110,  java.awt.Image.SCALE_SMOOTH);  
+		ImageIcon newIcon2 = new ImageIcon(imgscaled2);
+		
+		JLabel lblNewLabel_2 = new JLabel("");
+		lblNewLabel_2.setIcon(newIcon2);
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_2.setBounds(0, 453, 843, 95);
+		contentPane.add(lblNewLabel_2);
 		
 	}
 	
