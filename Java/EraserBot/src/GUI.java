@@ -48,7 +48,7 @@ public class GUI extends JFrame implements ActionListener
 		setTitle("DTO Eraserbot");
 		setAlwaysOnTop(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setSize(859, 630);
+		setSize(859, 620);
 		setLocationRelativeTo(null);
 		
 		//New JPanel
