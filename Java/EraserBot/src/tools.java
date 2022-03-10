@@ -39,12 +39,18 @@ public class tools
 		            
 		            diff = (new Date().getTime() - fileLastMod)/2.628E9;  //Diff in Months!
 		            
-		            //Suche nach Kritieren "Dateityp" und "Dateialter-hier > 6 Monate"
-		            if (filesname.endsWith(filetype) && diff > FileAge || filesname.endsWith(filetype.toUpperCase()) && diff > FileAge)
-		            	{
+		            //Suche nach Kritieren "Dateityp" und "Dateialter"
+		            
+		            if (filetype == "Alle" && diff > FileAge)
+	            	{
 		                resultInfo.add(sdf.format(fileLastMod)+"       ");
 		            	result.add(listOfFiles[i]);
-					    }
+	            	}
+		            else if (filetype != "Alle" && filesname.endsWith(filetype) && diff > FileAge || filetype != "Alle" && filesname.endsWith(filetype.toUpperCase()) && diff > FileAge)
+            		{       
+		                resultInfo.add(sdf.format(fileLastMod)+"       ");
+		            	result.add(listOfFiles[i]);					    
+            		}
 				}
 	            else if (listOfFiles[i].isDirectory())
 	        	{
