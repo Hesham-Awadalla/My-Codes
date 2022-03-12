@@ -4,6 +4,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -30,6 +31,7 @@ public class GUI extends JFrame implements ActionListener
 		{
 			setResizable(false);
 			setTitle("My Calculator");
+			setIconImage(new ImageIcon(this.getClass().getResource("/System-Calc-icon.png")).getImage().getScaledInstance(30, 30,  java.awt.Image.SCALE_SMOOTH));
 			setAlwaysOnTop(true);
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			setBounds(100, 100, 273, 373);
@@ -257,7 +259,7 @@ public class GUI extends JFrame implements ActionListener
 						btnPunkt.setEnabled(true);
 					} catch (ArithmeticException a)
 					{
-						textField.setText("Error");
+						textField.setText(a.getMessage());
 					}
 				//
 			}

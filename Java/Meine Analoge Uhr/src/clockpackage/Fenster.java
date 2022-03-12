@@ -1,5 +1,6 @@
 package clockpackage;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 
@@ -11,6 +12,7 @@ public class Fenster extends JFrame
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setTitle("Meine Analoge Uhr");
+		setIconImage(new ImageIcon(this.getClass().getResource("/Clock-icon.png")).getImage().getScaledInstance(30, 30,  java.awt.Image.SCALE_SMOOTH));
 		add(new Uhr());
 		setSize(435,460);
 		setResizable(false);
