@@ -14,6 +14,7 @@ import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
@@ -24,6 +25,7 @@ import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JTextField;
 
 public class GUI extends JFrame implements ActionListener
 {
@@ -40,6 +42,9 @@ public class GUI extends JFrame implements ActionListener
 	
 	private JFrame jf = new JFrame();
 	
+	//System.getProperty("user.dir");	
+	String path = System.getProperty("user.home");
+	
 	DefaultListModel model;
 
 	//Der Konstruktor
@@ -50,7 +55,7 @@ public class GUI extends JFrame implements ActionListener
 		setTitle("DTO Eraserbot");
 		setAlwaysOnTop(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setSize(859, 620);
+		setSize(859, 638);
 		setLocationRelativeTo(null);
 		
 		//New JPanel
@@ -67,20 +72,20 @@ public class GUI extends JFrame implements ActionListener
 		
 		JLabel lblNewLabel_3 = new JLabel("Nach welchem Dateityp möchtest du suchen?");
 		lblNewLabel_3.setFont(new Font("Arial", Font.PLAIN, 18));
-		lblNewLabel_3.setBounds(12, 381, 412, 30);
+		lblNewLabel_3.setBounds(12, 381, 382, 30);
 		contentPane.add(lblNewLabel_3);
 		
 		JButton btnNewButton = new JButton("Ergebnisse zeigen");
 		btnNewButton.addActionListener(this);
 		btnNewButton.setFont(new Font("Arial", Font.PLAIN, 15));
-		btnNewButton.setBounds(648, 382, 188, 30);
+		btnNewButton.setBounds(657, 382, 180, 30);
 		contentPane.add(btnNewButton);
 		
 		Dateityp = new JComboBox();
 		Dateityp.setToolTipText("Select an option");
 		Dateityp.setFont(new Font("Arial", Font.PLAIN, 15));
 		Dateityp.setModel(new DefaultComboBoxModel(new String[] {"Alle", ".pdf", ".doc", ".docx", ".xlsx", ".pptx", ".csv", ".one"}));
-		Dateityp.setBounds(402, 384, 149, 28);
+		Dateityp.setBounds(391, 383, 65, 29);
 		contentPane.add(Dateityp);
 		
 		scrollPane = new JScrollPane(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
@@ -94,7 +99,7 @@ public class GUI extends JFrame implements ActionListener
 		btnNewButton_1.addActionListener(this);
 		//btnNewButton_1.addActionListener(createStartTaskActionListener(jf));
 		btnNewButton_1.setFont(new Font("Arial", Font.PLAIN, 15));
-		btnNewButton_1.setBounds(648, 420, 188, 30);
+		btnNewButton_1.setBounds(657, 420, 180, 30);
 		contentPane.add(btnNewButton_1);
 		
 		/////
@@ -123,21 +128,37 @@ public class GUI extends JFrame implements ActionListener
 		JLabel lblNewLabel_2 = new JLabel("");
 		lblNewLabel_2.setIcon(newIcon2);
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_2.setBounds(0, 462, 843, 118);
+		lblNewLabel_2.setBounds(0, 471, 843, 118);
 		contentPane.add(lblNewLabel_2);
 		
 		AnzahlMonate = new JComboBox();
 		AnzahlMonate.setToolTipText("Select an option");
 		AnzahlMonate.setFont(new Font("Arial", Font.PLAIN, 15));
 		AnzahlMonate.setModel(new DefaultComboBoxModel(new String[] {"1", "3", "6", "12"}));
-		AnzahlMonate.setBounds(570, 421, 53, 28);
+		AnzahlMonate.setBounds(578, 421, 53, 29);
 		contentPane.add(AnzahlMonate);
+		
+		JButton btnNewButton_2 = new JButton("Ordner ausw\u00E4hlen");
+		btnNewButton_2.addActionListener(this);
+		btnNewButton_2.setFont(new Font("Arial", Font.PLAIN, 15));
+		btnNewButton_2.setBounds(467, 382, 180, 30);
+		contentPane.add(btnNewButton_2);
 		
 	}
 	
 	public void actionPerformed(ActionEvent e)
 	{
-		if (e.getActionCommand() == "Ergebnisse zeigen")
+		if (e.getActionCommand() == "Ordner auswählen")
+		{	
+		
+			JFileChooser choose = new JFileChooser();
+			choose.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+			choose.showOpenDialog(this);
+			
+			path = choose.getSelectedFile().getAbsolutePath();
+			
+		}
+		else if (e.getActionCommand() == "Ergebnisse zeigen")
 		{			
 			//////////////
 			
@@ -148,13 +169,6 @@ public class GUI extends JFrame implements ActionListener
 			//////////////
 			
 			setTitle("Loading...");
-			
-			Path HomeDir = Path.of(System.getProperty("user.home"));
-			//Path currentDir = Path.of(System.getProperty("user.dir"));	
-			String path = HomeDir.toString();
-			
-			//TODO
-			//Path per Hand eingeben (zusätzlich/2. Variante)  Wenn leer, eine Rückmeldung geben (getText()isEmpty()
 			
 			String filetype = Dateityp.getSelectedItem().toString();
 			int FileAge = Integer.parseInt(AnzahlMonate.getSelectedItem().toString());
@@ -228,5 +242,4 @@ public class GUI extends JFrame implements ActionListener
 			
 		}
 	}
-
 }
