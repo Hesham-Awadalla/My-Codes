@@ -1,5 +1,6 @@
 import static javax.swing.JOptionPane.showMessageDialog;
 
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.SystemColor;
@@ -7,7 +8,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Path;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
@@ -21,11 +21,10 @@ import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JTextField;
 
 public class GUI extends JFrame implements ActionListener
 {
@@ -33,20 +32,20 @@ public class GUI extends JFrame implements ActionListener
 	private static final long serialVersionUID = 1L;
 	
 	private JPanel contentPane;
-	private JScrollPane scrollPane;
-	private JList list;
-	private JList listInfo;
-	private JComboBox Dateityp;
-	private JComboBox AnzahlMonate;
-	private JTextArea textArea;
+	static JScrollPane scrollPane;
+	static JList list;		//TODO: Parametrisierung!!!
+	static JList listInfo;		//TODO: Parametrisierung!!!
+	private JComboBox<String> Dateityp;
+	private JComboBox<String> AnzahlMonate;   //TODO: Parametrisierung!!!
 	
 	private JFrame jf = new JFrame();
 	
 	//System.getProperty("user.dir");	
 	String path = System.getProperty("user.home");
 	
-	DefaultListModel model;
-
+	static DefaultListModel listModel = new DefaultListModel();  //TODO: Parametrisierung!!!
+	static DefaultListModel listModelInfo = new DefaultListModel();  //TODO: Parametrisierung!!!
+	
 	//Der Konstruktor
 	public GUI() throws IOException
 	{
@@ -81,10 +80,10 @@ public class GUI extends JFrame implements ActionListener
 		btnNewButton.setBounds(657, 382, 180, 30);
 		contentPane.add(btnNewButton);
 		
-		Dateityp = new JComboBox();
+		Dateityp = new JComboBox<String>();
 		Dateityp.setToolTipText("Select an option");
 		Dateityp.setFont(new Font("Arial", Font.PLAIN, 15));
-		Dateityp.setModel(new DefaultComboBoxModel(new String[] {"Alle", ".pdf", ".doc", ".docx", ".xlsx", ".pptx", ".csv", ".one"}));
+		Dateityp.setModel(new DefaultComboBoxModel<String>(new String[] {"Alle", ".pdf", ".doc", ".docx", ".xlsx", ".pptx", ".csv", ".one"}));
 		Dateityp.setBounds(391, 383, 65, 29);
 		contentPane.add(Dateityp);
 		
@@ -131,10 +130,10 @@ public class GUI extends JFrame implements ActionListener
 		lblNewLabel_2.setBounds(0, 471, 843, 118);
 		contentPane.add(lblNewLabel_2);
 		
-		AnzahlMonate = new JComboBox();
+		AnzahlMonate = new JComboBox<String>();
 		AnzahlMonate.setToolTipText("Select an option");
 		AnzahlMonate.setFont(new Font("Arial", Font.PLAIN, 15));
-		AnzahlMonate.setModel(new DefaultComboBoxModel(new String[] {"1", "3", "6", "12"}));
+		AnzahlMonate.setModel(new DefaultComboBoxModel<String>(new String[] {"1", "3", "6", "12"}));
 		AnzahlMonate.setBounds(578, 421, 53, 29);
 		contentPane.add(AnzahlMonate);
 		
@@ -153,6 +152,9 @@ public class GUI extends JFrame implements ActionListener
 		
 			JFileChooser choose = new JFileChooser();
 			choose.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+			choose.setPreferredSize(new Dimension(700, 500));
+			choose.setDialogTitle("Ordner auswählen");
+			choose.setApproveButtonText("Ordner auswählen");
 			choose.showOpenDialog(this);
 			
 			path = choose.getSelectedFile().getAbsolutePath();
@@ -160,76 +162,94 @@ public class GUI extends JFrame implements ActionListener
 		}
 		else if (e.getActionCommand() == "Ergebnisse zeigen")
 		{			
-			//////////////
 			
-//			loading RobotFenster = new loading();
-//			RobotFenster.setVisible(true);
-//			RobotFenster.setAlwaysOnTop(true);
-			
-			//////////////
-			
-			setTitle("Loading...");
+			loading RobotFenster = new loading();
+			RobotFenster.setVisible(true);
+			RobotFenster.setAlwaysOnTop(true);
 			
 			String filetype = Dateityp.getSelectedItem().toString();
 			int FileAge = Integer.parseInt(AnzahlMonate.getSelectedItem().toString());
 			
-			try
-			{	
-				
-				tools.listDir(path, filetype, FileAge);
-
-				list = new JList(tools.result.toArray());				
-				listInfo = new JList(tools.resultInfo.toArray());						
-				listInfo.setEnabled(false);
-				
-				//model = (DefaultListModel) list.getModel();
-
-				scrollPane.setViewportView(list);						
-				scrollPane.setRowHeaderView(listInfo);
-				
-				JLabel label1 = new JLabel("zuletzt geändert am:");
-				JLabel label2 = new JLabel("Ergebnisse:  (Es wurden "+ tools.result.size() + " Dateien vom Typ '"+ filetype + "' gefunden, die älter als "+ FileAge +
-						" Monate sind)");
-				label2.setHorizontalAlignment(SwingConstants.CENTER);
-				scrollPane.setCorner("UPPER_LEFT_CORNER", label1);
-				scrollPane.setColumnHeaderView(label2);
-				
-				//Die ArrayLists "result" & "resultInfo" wieder entleeren.
-				//Somit bekommen wir nur die neuen Ergebnisse bei jedem Klick auf "Ergebnisse zeigen"
-				tools.result.clear();
-				tools.resultInfo.clear();				
-			}
-			catch (IOException e1)
-			{
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
+			//Die DefaultModelLists wieder entleeren.
+			//Somit bekommen wir nur die neuen Ergebnisse bei jedem Klick auf "Ergebnisse zeigen"			
+			listModel.clear();
+			listModelInfo.clear();
 			
-			//RobotFenster.setVisible(false);
-			setTitle("DTO Eraserbot");
+			SwingUtilities.invokeLater(new Runnable() {
+			    public void run()
+			    {
+			    	try
+					{	
+			    		
+						//TODO:
+//						JLabel label1 = new JLabel("");
+//						JLabel label2 = new JLabel("Loading...");
+						setTitle("Loading...");
+						
+						tools.listDir(path, filetype, FileAge);
+
+						//TODO: die neugefeundenen Elemente vllt. in Echtzeit anzeigen
+						
+						//TODO: Parametrisierung
+						//list = new JList(tools.result.toArray());
+						list = new JList(listModel);
+						//listInfo = new JList(tools.resultInfo.toArray());
+						listInfo = new JList(listModelInfo);
+						listInfo.setEnabled(false);
+
+						scrollPane.setViewportView(list);					
+						scrollPane.setRowHeaderView(listInfo);
+						
+						//TODO: Nice to have >> zuletzt geändert durch + UserID
+						JLabel label1 = new JLabel("zuletzt geändert am:");
+						JLabel label2 = new JLabel("Ergebnisse:  (Es wurden "+ listModel.size() + " Dateien vom Typ '"+ filetype + "' gefunden, die älter als "+ FileAge +
+								" Monate sind)");
+						label2.setHorizontalAlignment(SwingConstants.CENTER);
+						scrollPane.setCorner("UPPER_LEFT_CORNER", label1);
+						scrollPane.setColumnHeaderView(label2);
+						
+						setTitle("DTO Eraserbot");
+											
+						RobotFenster.setVisible(false);
+						
+					}
+					catch (IOException e1)
+					{
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+			    }
+			});
 			
 		}		
 		else if(e.getActionCommand() == "Datei löschen")
 		{
 			//The file(s) to be delete:			
 			Object[] f1 = list.getSelectedValues();
+			
+			//TODO: hier oder in der for-Schleife hierunten??
+			//listInfo.setSelectedIndices(list.getSelectedIndices());
 
 			jf.setAlwaysOnTop(true);  //Setting the following JOpionPane/showMessageDialog always on top!
 			
-			int dialogResult = JOptionPane.showConfirmDialog (jf, "Möchtest du wirklich die Datei löschen?","Warning", JOptionPane.YES_NO_OPTION);
+			int dialogResult = JOptionPane.showConfirmDialog (jf, "Möchtest du wirklich die Datei(en) löschen?","Warnung", JOptionPane.YES_NO_OPTION);
 			if(dialogResult == JOptionPane.YES_OPTION)
 			{
 				try
 				{
 					for (int i = 0; i < f1.length; i++)
 					{
+						//Test
+						listInfo.setSelectedIndices(list.getSelectedIndices());
+						
 						File f = new File(f1[i].toString());
 						f.delete();
-						//model.remove(list.getSelectedIndices()[i]);
-						
+						//TODO: Testen mit verschiedenen Markierungen!!
+						listModel.remove(list.getSelectedIndices()[0]);
+						//TODO: Testen mit verschiedenen Markierungen!!
+						listModelInfo.remove(listInfo.getSelectedIndices()[0]);
 					}
 					
-					scrollPane.setViewportView(list);
 					
 					showMessageDialog(jf, "Die Datei(en) wurde(n) erfolgreich gelöscht"); 
 				}
