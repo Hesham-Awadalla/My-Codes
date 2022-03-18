@@ -32,19 +32,17 @@ public class GUI extends JFrame implements ActionListener
 	private static final long serialVersionUID = 1L;
 	
 	private JPanel contentPane;
-	static JScrollPane scrollPane;
-	static JList list;		//TODO: Parametrisierung!!!
-	static JList listInfo;		//TODO: Parametrisierung!!!
+	static JScrollPane scrollPane;	
+	static DefaultListModel<File> listModel = new DefaultListModel<File>();
+	static DefaultListModel<String> listModelInfo = new DefaultListModel<String>();	
+	static JList<DefaultListModel<File>> list;
+	static JList<DefaultListModel<String>> listInfo;
 	private JComboBox<String> Dateityp;
-	private JComboBox<String> AnzahlMonate;   //TODO: Parametrisierung!!!
+	private JComboBox<String> AnzahlMonate;
 	
 	private JFrame jf = new JFrame();
 	
-	//System.getProperty("user.dir");	
 	String path = System.getProperty("user.home");
-	
-	static DefaultListModel listModel = new DefaultListModel();  //TODO: Parametrisierung!!!
-	static DefaultListModel listModelInfo = new DefaultListModel();  //TODO: Parametrisierung!!!
 	
 	//Der Konstruktor
 	public GUI() throws IOException
@@ -88,28 +86,20 @@ public class GUI extends JFrame implements ActionListener
 		contentPane.add(Dateityp);
 		
 		scrollPane = new JScrollPane(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-		//Das Gegenteil von:
-		//scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-		//scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		scrollPane.setBounds(12, 84, 824, 282);
 		contentPane.add(scrollPane);
 			
 		JButton btnNewButton_1 = new JButton("Datei löschen");
 		btnNewButton_1.addActionListener(this);
-		//btnNewButton_1.addActionListener(createStartTaskActionListener(jf));
 		btnNewButton_1.setFont(new Font("Arial", Font.PLAIN, 15));
 		btnNewButton_1.setBounds(657, 420, 180, 30);
 		contentPane.add(btnNewButton_1);
 		
-		/////
 		Image img = new ImageIcon(this.getClass().getResource("/DT0.jpg")).getImage();  
 		Image imgscaled = img.getScaledInstance(191, 76,  java.awt.Image.SCALE_SMOOTH);
 		ImageIcon newIcon = new ImageIcon(imgscaled);
 		
-		JLabel lblNewLabel_1 = new JLabel();	
-		//Die Lücke zwischen Text und Bild negativ setzen, so dass die Komponenten übereinander gezeichnet werden
-		//lblNewLabel_1.setIconTextGap(-200);
-		//lblNewLabel_1.setIcon(new ImageIcon(this.getClass().getResource("/DT0.png")));
+		JLabel lblNewLabel_1 = new JLabel();
 		lblNewLabel_1.setIcon(newIcon);
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setBounds(12, 6, 191, 76);
@@ -181,26 +171,17 @@ public class GUI extends JFrame implements ActionListener
 			    	try
 					{	
 			    		
-						//TODO:
-//						JLabel label1 = new JLabel("");
-//						JLabel label2 = new JLabel("Loading...");
 						setTitle("Loading...");
 						
 						tools.listDir(path, filetype, FileAge);
 
-						//TODO: die neugefeundenen Elemente vllt. in Echtzeit anzeigen
-						
-						//TODO: Parametrisierung
-						//list = new JList(tools.result.toArray());
 						list = new JList(listModel);
-						//listInfo = new JList(tools.resultInfo.toArray());
 						listInfo = new JList(listModelInfo);
 						listInfo.setEnabled(false);
 
 						scrollPane.setViewportView(list);					
 						scrollPane.setRowHeaderView(listInfo);
 						
-						//TODO: Nice to have >> zuletzt geändert durch + UserID
 						JLabel label1 = new JLabel("zuletzt geändert am:");
 						JLabel label2 = new JLabel("Ergebnisse:  (Es wurden "+ listModel.size() + " Dateien vom Typ '"+ filetype + "' gefunden, die älter als "+ FileAge +
 								" Monate sind)");
@@ -226,9 +207,6 @@ public class GUI extends JFrame implements ActionListener
 		{
 			//The file(s) to be delete:			
 			Object[] f1 = list.getSelectedValues();
-			
-			//TODO: hier oder in der for-Schleife hierunten??
-			//listInfo.setSelectedIndices(list.getSelectedIndices());
 
 			jf.setAlwaysOnTop(true);  //Setting the following JOpionPane/showMessageDialog always on top!
 			
@@ -239,14 +217,13 @@ public class GUI extends JFrame implements ActionListener
 				{
 					for (int i = 0; i < f1.length; i++)
 					{
-						//Test
+						
 						listInfo.setSelectedIndices(list.getSelectedIndices());
 						
 						File f = new File(f1[i].toString());
 						f.delete();
-						//TODO: Testen mit verschiedenen Markierungen!!
+						
 						listModel.remove(list.getSelectedIndices()[0]);
-						//TODO: Testen mit verschiedenen Markierungen!!
 						listModelInfo.remove(listInfo.getSelectedIndices()[0]);
 					}
 					
