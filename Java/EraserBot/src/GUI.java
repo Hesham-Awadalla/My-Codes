@@ -49,7 +49,7 @@ public class GUI extends JFrame implements ActionListener
 	{
 		setResizable(false);
 		setIconImage(new ImageIcon(this.getClass().getResource("/Mercedes-Benz-Logo.png")).getImage().getScaledInstance(20, 20,  java.awt.Image.SCALE_SMOOTH));
-		setTitle("DTO Eraserbot");
+		setTitle("DTO Eraserbot 1.0");
 		setAlwaysOnTop(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(859, 638);
@@ -189,7 +189,7 @@ public class GUI extends JFrame implements ActionListener
 						scrollPane.setCorner("UPPER_LEFT_CORNER", label1);
 						scrollPane.setColumnHeaderView(label2);
 						
-						setTitle("DTO Eraserbot");
+						setTitle("DTO Eraserbot 1.0");
 											
 						RobotFenster.setVisible(false);
 						
