@@ -1,0 +1,30 @@
+C:\Users\HEOSMAN\source\repos\Taschenrechner\Taschenrechner\obj\Debug\Taschenrechner.csproj.AssemblyReference.cache
+C:\Users\HEOSMAN\source\repos\Taschenrechner\Taschenrechner\obj\Debug\App.g.cs
+C:\Users\HEOSMAN\source\repos\Taschenrechner\Taschenrechner\obj\Debug\Taschenrechner_MarkupCompile.cache
+C:\Users\HEOSMAN\source\repos\Taschenrechner\Taschenrechner\bin\Debug\Taschenrechner.exe.config
+C:\Users\HEOSMAN\source\repos\Taschenrechner\Taschenrechner\bin\Debug\Taschenrechner.exe
+C:\Users\HEOSMAN\source\repos\Taschenrechner\Taschenrechner\bin\Debug\Taschenrechner.pdb
+C:\Users\HEOSMAN\source\repos\Taschenrechner\Taschenrechner\obj\Debug\MainWindow.g.cs
+C:\Users\HEOSMAN\source\repos\Taschenrechner\Taschenrechner\obj\Debug\Taschenrechner_MarkupCompile.lref
+C:\Users\HEOSMAN\source\repos\Taschenrechner\Taschenrechner\obj\Debug\MainWindow.baml
+C:\Users\HEOSMAN\source\repos\Taschenrechner\Taschenrechner\obj\Debug\Taschenrechner.g.resources
+C:\Users\HEOSMAN\source\repos\Taschenrechner\Taschenrechner\obj\Debug\Taschenrechner.Properties.Resources.resources
+C:\Users\HEOSMAN\source\repos\Taschenrechner\Taschenrechner\obj\Debug\Taschenrechner.csproj.GenerateResource.cache
+C:\Users\HEOSMAN\source\repos\Taschenrechner\Taschenrechner\obj\Debug\Taschenrechner.csproj.CoreCompileInputs.cache
+C:\Users\HEOSMAN\source\repos\Taschenrechner\Taschenrechner\obj\Debug\Taschenrechner.exe
+C:\Users\HEOSMAN\source\repos\Taschenrechner\Taschenrechner\obj\Debug\Taschenrechner.pdb
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Test-Repository\C#\Taschenrechner\Taschenrechner\bin\Debug\Taschenrechner.exe.config
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Test-Repository\C#\Taschenrechner\Taschenrechner\bin\Debug\Taschenrechner.exe
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Test-Repository\C#\Taschenrechner\Taschenrechner\bin\Debug\Taschenrechner.pdb
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Test-Repository\C#\Taschenrechner\Taschenrechner\obj\Debug\Taschenrechner.csproj.AssemblyReference.cache
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Test-Repository\C#\Taschenrechner\Taschenrechner\obj\Debug\MainWindow.g.cs
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Test-Repository\C#\Taschenrechner\Taschenrechner\obj\Debug\App.g.cs
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Test-Repository\C#\Taschenrechner\Taschenrechner\obj\Debug\Taschenrechner_MarkupCompile.cache
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Test-Repository\C#\Taschenrechner\Taschenrechner\obj\Debug\Taschenrechner_MarkupCompile.lref
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Test-Repository\C#\Taschenrechner\Taschenrechner\obj\Debug\MainWindow.baml
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Test-Repository\C#\Taschenrechner\Taschenrechner\obj\Debug\Taschenrechner.g.resources
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Test-Repository\C#\Taschenrechner\Taschenrechner\obj\Debug\Taschenrechner.Properties.Resources.resources
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Test-Repository\C#\Taschenrechner\Taschenrechner\obj\Debug\Taschenrechner.csproj.GenerateResource.cache
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Test-Repository\C#\Taschenrechner\Taschenrechner\obj\Debug\Taschenrechner.csproj.CoreCompileInputs.cache
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Test-Repository\C#\Taschenrechner\Taschenrechner\obj\Debug\Taschenrechner.exe
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Test-Repository\C#\Taschenrechner\Taschenrechner\obj\Debug\Taschenrechner.pdb
