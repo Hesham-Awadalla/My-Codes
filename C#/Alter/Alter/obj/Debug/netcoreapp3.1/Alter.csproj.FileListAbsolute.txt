@@ -1,0 +1,14 @@
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Test-Repository\C#\Alter\Alter\bin\Debug\netcoreapp3.1\Alter.exe
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Test-Repository\C#\Alter\Alter\bin\Debug\netcoreapp3.1\Alter.deps.json
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Test-Repository\C#\Alter\Alter\bin\Debug\netcoreapp3.1\Alter.runtimeconfig.json
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Test-Repository\C#\Alter\Alter\bin\Debug\netcoreapp3.1\Alter.runtimeconfig.dev.json
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Test-Repository\C#\Alter\Alter\bin\Debug\netcoreapp3.1\Alter.dll
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Test-Repository\C#\Alter\Alter\bin\Debug\netcoreapp3.1\Alter.pdb
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Test-Repository\C#\Alter\Alter\obj\Debug\netcoreapp3.1\Alter.csproj.AssemblyReference.cache
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Test-Repository\C#\Alter\Alter\obj\Debug\netcoreapp3.1\Alter.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Test-Repository\C#\Alter\Alter\obj\Debug\netcoreapp3.1\Alter.AssemblyInfoInputs.cache
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Test-Repository\C#\Alter\Alter\obj\Debug\netcoreapp3.1\Alter.AssemblyInfo.cs
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Test-Repository\C#\Alter\Alter\obj\Debug\netcoreapp3.1\Alter.csproj.CoreCompileInputs.cache
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Test-Repository\C#\Alter\Alter\obj\Debug\netcoreapp3.1\Alter.dll
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Test-Repository\C#\Alter\Alter\obj\Debug\netcoreapp3.1\Alter.pdb
+C:\Users\HEOSMAN\Documents\#Mein Cloud\Git\Test-Repository\C#\Alter\Alter\obj\Debug\netcoreapp3.1\Alter.genruntimeconfig.cache
