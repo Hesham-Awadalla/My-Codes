@@ -8,16 +8,21 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.io.IOException;
 
 public class loading extends JFrame
 {
-
+	
 	private static final long serialVersionUID = 1L;
 	
 	private JPanel contentPane2;
+	
+	static JLabel lblRobot;
 
 	public loading()
-	{
+	{		
 		setFont(new Font("Arial", Font.PLAIN, 12));
 		setTitle("Loading...");
 		setResizable(false);
@@ -25,6 +30,8 @@ public class loading extends JFrame
 		setBounds(100, 100, 430, 176);
 		setIconImage(new ImageIcon(this.getClass().getResource("/Mercedes-Benz-Logo.png")).getImage().getScaledInstance(20, 20,  java.awt.Image.SCALE_SMOOTH));
 		setLocationRelativeTo(null);
+		//setAlwaysOnTop(true);
+		//setVisible(true);
 		
 		contentPane2 = new JPanel();
 		contentPane2.setBackground(Color.WHITE);
@@ -32,27 +39,18 @@ public class loading extends JFrame
 		setContentPane(contentPane2);
 		contentPane2.setLayout(null);
 		
-		JLabel Label = new JLabel("Bitte um etwas Geduld!");
-		Label.setFont(new Font("Arial", Font.PLAIN, 15));
-		Label.setHorizontalAlignment(SwingConstants.LEFT);
-		Label.setBounds(27, 24, 234, 47);
-		contentPane2.add(Label);
+		//Ein JLabel mit mehreren Zeilen beschriften, indem man den Text des JLabels in html-Tags packt
+		JLabel lblBitteGeduld = new JLabel("<html>Bitte um etwas Geduld<br><br>Ich suche gerade die Dateien für dich...<html>");
+		lblBitteGeduld.setFont(new Font("Arial", Font.PLAIN, 15));
+		lblBitteGeduld.setHorizontalAlignment(SwingConstants.LEFT);
+		lblBitteGeduld.setBounds(27, 24, 273, 72);
+		contentPane2.add(lblBitteGeduld);
 		
-		JLabel lblIchSucheGerade = new JLabel("Ich suche gerade die Dateien f\u00FCr dich...");
-		lblIchSucheGerade.setHorizontalAlignment(SwingConstants.LEFT);
-		lblIchSucheGerade.setFont(new Font("Arial", Font.PLAIN, 15));
-		lblIchSucheGerade.setBounds(27, 62, 285, 47);
-		contentPane2.add(lblIchSucheGerade);
-		
-		Image img1 = new ImageIcon(this.getClass().getResource("/robot-line.png")).getImage();  
-		Image imgscaled1 = img1.getScaledInstance(75, 72,  java.awt.Image.SCALE_SMOOTH);  
-		ImageIcon newIcon1 = new ImageIcon(imgscaled1);
-		
-		JLabel Label_1 = new JLabel("");
-		Label_1.setIcon(newIcon1);
-		Label_1.setHorizontalAlignment(SwingConstants.CENTER);
-		Label_1.setBounds(310, 24, 75, 72);
-		contentPane2.add(Label_1);				
+		//Zum Hinzufügen des RoboterIcons während des Suchvorgangs (s. SwingWorker worker2 bei GUI)
+		lblRobot = new JLabel();
+		lblRobot.setHorizontalAlignment(SwingConstants.CENTER);
+		lblRobot.setBounds(310, 24, 75, 72);
+		contentPane2.add(lblRobot);
 		
 	}
 }

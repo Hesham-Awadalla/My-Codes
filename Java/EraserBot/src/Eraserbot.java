@@ -1,3 +1,10 @@
+/* DTO Eraserbot 1.3 by Hesham M. Awadalla Osman
+ * 
+ * This is a Java based application that can be used to
+ * search for and delete old documents
+ * according to specific criteria.
+ */
+
 import java.awt.EventQueue;
 
 public class Eraserbot
