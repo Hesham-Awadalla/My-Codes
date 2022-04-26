@@ -42,7 +42,7 @@ public class GUI extends JFrame implements ActionListener
 	private JComboBox<String> Dateityp, AnzahlMonate;
 	
 	private JFrame jf = new JFrame();
-	
+
 	String path = System.getProperty("user.home");
 	
 	//RoboterIcon:
@@ -52,13 +52,28 @@ public class GUI extends JFrame implements ActionListener
 	
 	//RoboterIcon beim Zwinkern:
 	Image zwinkern = new ImageIcon(this.getClass().getResource("/robot-line2.png")).getImage();  
-	Image zwinkernSscaled = zwinkern.getScaledInstance(75, 72,  java.awt.Image.SCALE_SMOOTH);  
-	ImageIcon zwinkernIcon = new ImageIcon(zwinkernSscaled);
+	Image zwinkernScaled = zwinkern.getScaledInstance(75, 72,  java.awt.Image.SCALE_SMOOTH);  
+	ImageIcon zwinkernIcon = new ImageIcon(zwinkernScaled);
 	
 	//TrashIcon
 	Image trash = new ImageIcon(this.getClass().getResource("/trash-icon.png")).getImage();
-	Image trashSscaled = trash.getScaledInstance(23, 23,  java.awt.Image.SCALE_SMOOTH); 
-	ImageIcon trashIcon = new ImageIcon(trashSscaled);
+	Image trashScaled = trash.getScaledInstance(19, 19,  java.awt.Image.SCALE_SMOOTH); 
+	ImageIcon trashIcon = new ImageIcon(trashScaled);
+	
+	//LupeIcon
+	Image Lupe = new ImageIcon(this.getClass().getResource("/Lupe.png")).getImage();
+	Image LupeScaled = Lupe.getScaledInstance(19, 19,  java.awt.Image.SCALE_SMOOTH); 
+	ImageIcon LupeIcon = new ImageIcon(LupeScaled);
+	
+	//CrossIcon
+	Image cross = new ImageIcon(this.getClass().getResource("/Cross-icon.png")).getImage();
+	Image crossScaled = cross.getScaledInstance(19, 19,  java.awt.Image.SCALE_SMOOTH); 
+	ImageIcon crossIcon = new ImageIcon(crossScaled);
+	
+	//FolderIcon
+	Image folder = new ImageIcon(this.getClass().getResource("/Folder-icon.png")).getImage();
+	Image folderScaled = folder.getScaledInstance(19, 19,  java.awt.Image.SCALE_SMOOTH); 
+	ImageIcon folderIcon = new ImageIcon(folderScaled);
 	
 	loading RobotFenster = new loading();
 	
@@ -77,7 +92,7 @@ public class GUI extends JFrame implements ActionListener
 		setTitle("DTO Eraserbot 1.3");
 		setAlwaysOnTop(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setSize(859, 665);
+		setSize(859, 667);
 		setLocationRelativeTo(null);
 		
 		//New JPanel
@@ -112,28 +127,31 @@ public class GUI extends JFrame implements ActionListener
 		contentPane.add(scrollPane);
 		
 		JButton btnOrdnerAuswahl = new JButton("Ordner auswählen");
+		btnOrdnerAuswahl.setIcon(folderIcon);
 		btnOrdnerAuswahl.addActionListener(this);
 		btnOrdnerAuswahl.setFont(new Font("Arial", Font.PLAIN, 15));
 		btnOrdnerAuswahl.setBounds(467, 382, 180, 30);
 		contentPane.add(btnOrdnerAuswahl);
 		
-		JButton btnErgebnisse = new JButton("Ergebnisse zeigen");
-		btnErgebnisse.addActionListener(this);
-		btnErgebnisse.setFont(new Font("Arial", Font.PLAIN, 15));
-		btnErgebnisse.setBounds(656, 382, 180, 30);
-		contentPane.add(btnErgebnisse);
+		JButton btnSuchen = new JButton("Suchen");
+		btnSuchen.setIcon(LupeIcon);
+		btnSuchen.addActionListener(this);
+		btnSuchen.setFont(new Font("Arial", Font.PLAIN, 15));
+		btnSuchen.setBounds(656, 382, 180, 30);
+		contentPane.add(btnSuchen);
 			
 		JButton btnLoeschen = new JButton("Endgültig löschen");
+		btnLoeschen.setIcon(crossIcon);
 		btnLoeschen.addActionListener(this);
 		btnLoeschen.setFont(new Font("Arial", Font.PLAIN, 15));
-		btnLoeschen.setBounds(656, 420, 180, 30);
+		btnLoeschen.setBounds(656, 457, 180, 30);
 		contentPane.add(btnLoeschen);
 		
 		JButton btnRecyceln = new JButton("Recyceln");
 		btnRecyceln.setIcon(trashIcon);
 		btnRecyceln.addActionListener(this);
 		btnRecyceln.setFont(new Font("Arial", Font.PLAIN, 15));
-		btnRecyceln.setBounds(656, 458, 180, 30);
+		btnRecyceln.setBounds(656, 420, 180, 30);
 		contentPane.add(btnRecyceln);
 		
 		Image logo = new ImageIcon(this.getClass().getResource("/DT0.jpg")).getImage();  
@@ -157,7 +175,7 @@ public class GUI extends JFrame implements ActionListener
 		contentPane.add(lblErgebnisse);
 		
 		Image banner = new ImageIcon(this.getClass().getResource("/DT2.jpg")).getImage();  
-		Image bannerScaled = banner.getScaledInstance(855, 143,  java.awt.Image.SCALE_SMOOTH);  
+		Image bannerScaled = banner.getScaledInstance(870, 140,  java.awt.Image.SCALE_SMOOTH);  
 		ImageIcon bannerIcon = new ImageIcon(bannerScaled);
 		
 		JLabel lblBanner = new JLabel("");
@@ -188,7 +206,7 @@ public class GUI extends JFrame implements ActionListener
 			
 			path = choose.getSelectedFile().getAbsolutePath();			
 		}
-		else if (e.getActionCommand() == "Ergebnisse zeigen")
+		else if (e.getActionCommand() == "Suchen")
 		{
 			//Die DefaultModelLists wieder entleeren.
 			//Somit bekommen wir nur die neuen Ergebnisse bei jedem Klick auf "Ergebnisse zeigen"			
@@ -266,7 +284,7 @@ public class GUI extends JFrame implements ActionListener
 							Thread.sleep(2900);
 							loading.lblRobot.setIcon(zwinkernIcon);
 							Thread.sleep(700);
-							
+
 						};
 
 					}
@@ -278,7 +296,7 @@ public class GUI extends JFrame implements ActionListener
 					
 					return null;
 				}
-		
+				
 			};
 			
 			//Die SwingWorkers 1 & 2 starten:
