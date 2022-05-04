@@ -151,7 +151,6 @@ public class GUI extends JFrame implements ActionListener, PropertyChangeListene
 		JButton btnLoeschen = new JButton("Endgültig löschen");
 		btnLoeschen.setIcon(crossIcon);
 		btnLoeschen.addActionListener(this);
-		//btnNewButton_1.addActionListener(createStartTaskActionListener(jf));
 		btnLoeschen.setFont(new Font("Arial", Font.PLAIN, 15));
 		btnLoeschen.setBounds(656, 457, 180, 30);
 		contentPane.add(btnLoeschen);

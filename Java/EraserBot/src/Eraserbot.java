@@ -1,8 +1,9 @@
 /* DTO Eraserbot 1.3 by Hesham Mohamed Awadalla Osman
  * 
- * This is a Java based application that can be used to
- * search for and delete old documents
- * according to specific criteria.
+ * Dies ist eine in der Programmiersprache Java geschriebene Applikation, die verwendet werden kann,
+ * um nach Dateien - nach bestimmten Kriterien (Dateityp/-alter)- zu suchen,
+ * die entsprechend in den Papierkorb geschoben bzw. endgültig gelöscht werden sollen.
+ * 
  */
 
 import java.awt.EventQueue;

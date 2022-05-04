@@ -40,10 +40,10 @@ public class tools
 		            //1. Variante: Alle Dateitypen suchen
 		            if (filetype == "Alle" && diff > FileAge)
 	            	{
-		            	//Zuletzt geändert am (mit dem deutschen Datum-/Uhrzeitformat "dd.MM.yyyy HH:mm") (s.GUI ab Z. 337)
+		            	//Zuletzt geändert am (mit dem deutschen Datum-/Uhrzeitformat "dd.MM.yyyy HH:mm") (s.GUI ab Z. 336)
 		                GUI.listModelInfo.addElement(sdf.format(fileLastMod)+"       ");
 		            	
-		                //Ergebnisse (die nach Kritirien gefundenen Dateien)  (s.GUI Z. 336)
+		                //Ergebnisse (die nach Kritirien gefundenen Dateien)  (s.GUI Z. 335)
 		            	GUI.listModel.addElement(listOfFiles[i]);
 
 	            	}
