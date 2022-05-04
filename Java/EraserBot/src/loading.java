@@ -1,25 +1,22 @@
+import java.awt.Color;
 import java.awt.Font;
-import java.awt.Image;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JProgressBar;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-import java.awt.Color;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.io.IOException;
 
 public class loading extends JFrame
 {
 	
 	private static final long serialVersionUID = 1L;
 	
-	private JPanel contentPane2;
-	
+	private JPanel contentPane2;	
 	static JLabel lblRobot;
+	static JProgressBar progressBar;
 
 	public loading()
 	{		
@@ -27,11 +24,9 @@ public class loading extends JFrame
 		setTitle("Loading...");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 430, 176);
+		setBounds(100, 100, 430, 189);
 		setIconImage(new ImageIcon(this.getClass().getResource("/Mercedes-Benz-Logo.png")).getImage().getScaledInstance(20, 20,  java.awt.Image.SCALE_SMOOTH));
 		setLocationRelativeTo(null);
-		//setAlwaysOnTop(true);
-		//setVisible(true);
 		
 		contentPane2 = new JPanel();
 		contentPane2.setBackground(Color.WHITE);
@@ -46,11 +41,19 @@ public class loading extends JFrame
 		lblBitteGeduld.setBounds(27, 24, 273, 72);
 		contentPane2.add(lblBitteGeduld);
 		
-		//Zum Hinzufügen des RoboterIcons während des Suchvorgangs (s. SwingWorker worker2 bei GUI)
+		//Zum Hinzufügen des RoboterIcons während des Suchvorgangs (s. SwingWorker worker bei GUI)
 		lblRobot = new JLabel();
 		lblRobot.setHorizontalAlignment(SwingConstants.CENTER);
 		lblRobot.setBounds(310, 24, 75, 72);
 		contentPane2.add(lblRobot);
+		
+		//ProgressBar
+		progressBar = new JProgressBar(0, 100);
+		progressBar.setForeground(new Color(34, 139, 34));
+		progressBar.setStringPainted(true);
+		progressBar.setBounds(100, 110, 224, 22);
+	    progressBar.setValue(0);
+		contentPane2.add(progressBar);
 		
 	}
 }

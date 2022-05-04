@@ -8,8 +8,11 @@ import java.awt.Image;
 import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.io.File;
 import java.io.IOException;
+import java.util.Random;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
@@ -28,7 +31,7 @@ import javax.swing.SwingConstants;
 import javax.swing.SwingWorker;
 import javax.swing.border.EmptyBorder;
 
-public class GUI extends JFrame implements ActionListener
+public class GUI extends JFrame implements ActionListener, PropertyChangeListener
 {
 
 	private static final long serialVersionUID = 1L;
@@ -42,7 +45,9 @@ public class GUI extends JFrame implements ActionListener
 	private JComboBox<String> Dateityp, AnzahlMonate;
 	
 	private JFrame jf = new JFrame();
-
+	
+	//Der ursprüngliche Pfad, wo der Suchvorgang stattfindent,
+	//zeigt automatisch auf das Home-Verzeichnis (außer man benutzt den FileChooser)
 	String path = System.getProperty("user.home");
 	
 	//RoboterIcon:
@@ -83,6 +88,9 @@ public class GUI extends JFrame implements ActionListener
 	
 	//Ein Ergebnis-Label
 	JLabel lblErgebnisse = new JLabel();
+	
+	//Für den ProgressBar
+	int progress;
 	
 	//Der Konstruktor
 	public GUI() throws IOException
@@ -143,6 +151,7 @@ public class GUI extends JFrame implements ActionListener
 		JButton btnLoeschen = new JButton("Endgültig löschen");
 		btnLoeschen.setIcon(crossIcon);
 		btnLoeschen.addActionListener(this);
+		//btnNewButton_1.addActionListener(createStartTaskActionListener(jf));
 		btnLoeschen.setFont(new Font("Arial", Font.PLAIN, 15));
 		btnLoeschen.setBounds(656, 457, 180, 30);
 		contentPane.add(btnLoeschen);
@@ -158,7 +167,7 @@ public class GUI extends JFrame implements ActionListener
 		Image logoScaled = logo.getScaledInstance(191, 76,  java.awt.Image.SCALE_SMOOTH);
 		ImageIcon logoIcon = new ImageIcon(logoScaled);
 		
-		JLabel lblLogo = new JLabel();	
+		JLabel lblLogo = new JLabel();
 		lblLogo.setIcon(logoIcon);
 		lblLogo.setHorizontalAlignment(SwingConstants.CENTER);
 		lblLogo.setBounds(12, 6, 191, 76);
@@ -175,7 +184,7 @@ public class GUI extends JFrame implements ActionListener
 		contentPane.add(lblErgebnisse);
 		
 		Image banner = new ImageIcon(this.getClass().getResource("/DT2.jpg")).getImage();  
-		Image bannerScaled = banner.getScaledInstance(870, 140,  java.awt.Image.SCALE_SMOOTH);  
+		Image bannerScaled = banner.getScaledInstance(870, 133,  java.awt.Image.SCALE_SMOOTH);  
 		ImageIcon bannerIcon = new ImageIcon(bannerScaled);
 		
 		JLabel lblBanner = new JLabel("");
@@ -241,8 +250,80 @@ public class GUI extends JFrame implements ActionListener
 				protected Void doInBackground() throws Exception 
 				{
 					try
-					{
-				
+					{	
+						//Ein (asynchroner) Thread für den ProgressBar
+						Thread progressBarThread = new Thread()
+						{
+						    public void run()
+						    {
+					            //Initialize progress property:
+					            setProgress(0);
+					            
+						    	//Zum Erzeugen von zufälligen Zeitintervallen
+								Random random = new Random();
+					            progress = 0;
+					            
+					            while (progress < 100 && !isDone())
+					            {					            	
+					                //Sleep for up to 2.5 seconds:
+					                try
+					                {
+					                    Thread.sleep(random.nextInt(2500));
+					                }
+					                catch (InterruptedException ignore) {}
+					                
+					                //Make random progress:
+					                progress += random.nextInt(5);
+					                setProgress(Math.min(progress, 100));
+					            }
+					            
+					            //ProgressBar auf 100% setzen nach Ende der Suche
+								setProgress(100);
+								
+								//Das Loadingfenster 1 Sek. vorm Ausblenden erscheinen lassen,
+								//damit der Benutzer die 100% erkennen kann:							
+				                try
+				                {
+				                    Thread.sleep(1000);
+				                }
+				                catch (InterruptedException ignore) {}
+							
+								//LoadingFenster wieder schließen
+								RobotFenster.setVisible(false);
+								
+								//ProgressBar zurücksetzen, damit es wieder auf 0 erscheint bei erneuter Suche
+								//*Wenn man darauf verzichten würde (da setProgress(0) am Anfang des Threads ja schon passiert)
+								//sieht man trotzdem für einen Augenblick am Anfang die 100%, was unerwünscht ist 
+								setProgress(0);
+						    }
+						};
+						
+						//Ein (asynchroner) Thread für den zwinkernden Roboter
+						Thread zwinkernThread = new Thread()
+						{
+						    public void run()
+						    {
+						    	//Solange der SwingWorker/die doInBackground()-Methode läuft:
+								while (!isDone())
+								{	
+									try
+									{
+										loading.lblRobot.setIcon(RobotIcon);
+										Thread.sleep(2900);
+										loading.lblRobot.setIcon(zwinkernIcon);
+										Thread.sleep(700);
+									}
+									catch (InterruptedException ignore) {}
+									
+								}
+						    }
+						};
+					//Die Threads (asynchron) starten:
+					progressBarThread.start();
+					zwinkernThread.start();
+			         
+					//Dieser Vorgang ist zeitintensiv (Das Gehirn des Programms):
+					//Deswegen benutzen wir den SwingWorker
 					tools.listDir(path, filetype, FileAge);
 					
 					//Die Beschriftung der Labels aktualisieren:
@@ -253,10 +334,7 @@ public class GUI extends JFrame implements ActionListener
 					
 					//Die restlichen JScrollPane-Bereiche befüllen: (s. Foto im Resources-Ordner)
 					scrollPane.setViewportView(list);					
-					scrollPane.setRowHeaderView(listInfo);
-					
-					//LoadingFenster wieder schließen
-					RobotFenster.setVisible(false);					
+					scrollPane.setRowHeaderView(listInfo);			
 
 					}
 					catch (Exception e1)
@@ -270,38 +348,9 @@ public class GUI extends JFrame implements ActionListener
 		
 			};
 			
-			//Noch ein SwingWorker zum Zwinkern-Effekt des Roboter während des Suchvorgangs:
-			SwingWorker<Void, Void> worker2 = new SwingWorker <Void, Void>()		
-			{
-				@Override
-				protected Void doInBackground() throws Exception 
-				{
-					try
-					{						
-						while (!worker.isDone())
-						{   
-							loading.lblRobot.setIcon(RobotIcon);
-							Thread.sleep(2900);
-							loading.lblRobot.setIcon(zwinkernIcon);
-							Thread.sleep(700);
-
-						};
-
-					}
-					catch (Exception e1)
-					{
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-					
-					return null;
-				}
-				
-			};
-			
-			//Die SwingWorkers 1 & 2 starten:
-			worker.execute();		
-			worker2.execute();
+			worker.addPropertyChangeListener(this);
+			//SwingWorker starten:
+			worker.execute();
 			
 		}		
 		else if(e.getActionCommand() == "Endgültig löschen" || e.getActionCommand() == "Recyceln")
@@ -344,7 +393,8 @@ public class GUI extends JFrame implements ActionListener
 						listModelInfo.remove(listInfo.getSelectedIndices()[0]);
 					}
 					
-					//Der Benutzer wird informiert, dass die Datei(en) gelöscht worden sind
+					//Der Benutzer wird informiert, dass die Datei(en) recyclet
+					//bzw. endgültig gelöscht worden sind:
 					showMessageDialog(jf, e.getActionCommand()+" der Datei(en) war erfolgreich!"); 
 				}
 				catch (Exception ex)
@@ -357,4 +407,17 @@ public class GUI extends JFrame implements ActionListener
 			
 		}
 	}
+	
+	//Der PropertyChangeListener:
+	//Invoked when worker's progress property changes:
+    public void propertyChange(PropertyChangeEvent evt)
+    {
+        if ("progress" == evt.getPropertyName())
+        {
+        	//Den aktuellen Progress abrufen:
+            int progress = (Integer) evt.getNewValue();       
+            //Den ProgressBar dementsprechend aktualisieren:
+            loading.progressBar.setValue(progress);
+        } 
+    }
 }
