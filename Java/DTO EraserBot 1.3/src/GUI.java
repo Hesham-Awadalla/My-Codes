@@ -142,6 +142,7 @@ public class GUI extends JFrame implements ActionListener, PropertyChangeListene
 		contentPane.add(btnOrdnerAuswahl);
 		
 		JButton btnSuchen = new JButton("Suchen");
+		btnSuchen.setToolTipText("Die Dateien suchen");
 		btnSuchen.setIcon(LupeIcon);
 		btnSuchen.addActionListener(this);
 		btnSuchen.setFont(new Font("Arial", Font.PLAIN, 15));
@@ -156,6 +157,7 @@ public class GUI extends JFrame implements ActionListener, PropertyChangeListene
 		contentPane.add(btnLoeschen);
 		
 		JButton btnRecyceln = new JButton("Recyceln");
+		btnRecyceln.setToolTipText("In den Papierkorb schieben");
 		btnRecyceln.setIcon(trashIcon);
 		btnRecyceln.addActionListener(this);
 		btnRecyceln.setFont(new Font("Arial", Font.PLAIN, 15));
@@ -206,6 +208,7 @@ public class GUI extends JFrame implements ActionListener, PropertyChangeListene
 		if (e.getActionCommand() == "Ordner auswählen")
 		{			
 			JFileChooser choose = new JFileChooser();
+			//Der FileChooser darf in diesem Fall nur Directories/Ordner auswählen
 			choose.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 			choose.setPreferredSize(new Dimension(700, 500));
 			choose.setDialogTitle("Ordner auswählen");
