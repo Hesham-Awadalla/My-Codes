@@ -5,42 +5,49 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Taschenrechner"
         mc:Ignorable="d"
-        Title="MainWindow" Height="426" Width="334.667">
-    <Grid Margin="-20,0,-108,-136.333" Height="521" VerticalAlignment="Top" HorizontalAlignment="Left" Width="448">
+        Title="My Calculator" Height="401.333" Width="261.333">
+    <Grid Height="370" VerticalAlignment="Top" Background="Black" HorizontalAlignment="Right" Width="253" Margin="0,0,-0.333,0">
         <!-- TextBlock vs. Label-->
-        <Button x:Name="btnEins" Margin="34,196,339,260" FontSize="20" Click="btnEins_Click">1</Button>
+        <Button x:Name="btnEins" Margin="15,192,178.667,121.333" FontSize="20" Click="btnEins_Click" Content="1"/>
 
-        <Button x:Name="btnZwei" Margin="114,196,258,260" FontSize="20" Click="btnZwei_Click">2</Button>
+        <Button x:Name="btnZwei" Margin="76,192,115.667,121.333" FontSize="20" Click="btnZwei_Click" Content="2"/>
 
-        <Button x:Name="btnDrei" Margin="196,196,177,260" FontSize="20" Click="btnDrei_Click">3</Button>
+        <Button x:Name="btnDrei" Margin="139,192,52.667,121.333" FontSize="20" Click="btnDrei_Click" Content="3"/>
 
-        <Button x:Name="btnVier" Margin="34,128,339,329" FontSize="20" Click="btnVier_Click">4</Button>
+        <Button x:Name="btnVier" Margin="14,133,178.667,182.333" FontSize="20" Click="btnVier_Click" Content="4"/>
 
-        <Button x:Name="btnFünf" Margin="115,128,258,329" FontSize="20" Click="btnFünf_Click">5</Button>
+        <Button x:Name="btnFünf" Margin="77,133,115.667,182.333" FontSize="20" Click="btnFünf_Click" Content="5"/>
 
-        <Button x:Name="btnSechs" Margin="196,128,177,329" FontSize="20" Click="btnSechs_Click">6</Button>
+        <Button x:Name="btnSechs" Margin="139,133,52.667,182.333" FontSize="20" Click="btnSechs_Click" Content="6"/>
 
-        <Button x:Name="btnSieben" Margin="34,58,339,398" FontSize="20" Click="btnSieben_Click">7</Button>
+        <Button x:Name="btnSieben" Margin="14,70,178.667,244.333" FontSize="20" Click="btnSieben_Click" Content="7"/>
 
-        <Button x:Name="btnAcht" Margin="114,58,258,398" FontSize="20" Click="btnAcht_Click">8</Button>
+        <Button x:Name="btnAcht" Margin="76,70,115.667,244.333" FontSize="20" Click="btnAcht_Click" Content="8"/>
 
-        <Button x:Name="btnNeun" Margin="196,58,177,398" FontSize="20" Click="btnNeun_Click">9</Button>
+        <Button x:Name="btnNeun" Margin="139,70,52.667,244.333" FontSize="20" Click="btnNeun_Click" Content="9"/>
 
-        <Button x:Name="btnMinus" Margin="0,196,120,261" FontSize="20" Click="btnMinus_Click" HorizontalAlignment="Right" Width="52">-</Button>
+        <Button x:Name="btnMinus" Margin="0,192,9,122" FontSize="20" Click="btnMinus_Click" HorizontalAlignment="Right" Width="41" Content="-" Background="#FFD08215"/>
 
-        <Button x:Name="btnMulti" Margin="276,127,120,330" FontSize="20" Click="btnMulti_Click">X</Button>
+        <Button x:Name="btnMulti" Margin="203,133,8.667,182.333" FontSize="20" Click="btnMulti_Click" Content="X" Background="#FFD08215"/>
 
-        <Button x:Name="btnDiv" Margin="276,58,120,399" Content="/" FontSize="20" Click="btnDiv_Click"></Button>
+        <Button x:Name="btnDiv" Margin="203,70,8.667,244.333" Content="/" FontSize="20" Click="btnDiv_Click" Background="#FFD08215"/>
 
-        <Button x:Name="btnNull" Margin="35,267,339,189" FontSize="20" Click="btnNull_Click">0</Button>
+        <Button x:Name="btnNull" Margin="15,256,178.667,57.333" FontSize="20" Click="btnNull_Click" Content="0"/>
 
-        <Button x:Name="btnComma" Margin="115,267,258,189" FontSize="20" Click="btnComma_Click" Content=","/>
+        <Button x:Name="btnComma" Margin="77,256,117,57" FontSize="20" Click="btnComma_Click" Content=","/>
 
-        <Button x:Name="btnGleich" Margin="196,267,177,189" FontSize="20" Click="btnGleich_Click">=</Button>
+        <Button x:Name="btnGleich" Margin="139,256,53,57" FontSize="20" Click="btnGleich_Click" Content="=" Background="#FFD08215"/>
 
-        <Button x:Name="btnPlus" Margin="276,267,120,189" FontSize="20" Click="btnPlus_Click">+</Button>
-        <TextBox x:Name="txtErgebnis" HorizontalAlignment="Left" Height="40" Margin="34,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="294" FontSize="24" IsEnabled="False"/>
-        <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Height="37" Margin="34,339,0,0" VerticalAlignment="Top" Width="293" FontSize="20" Click="btnClear_Click"/>
+        <Button x:Name="btnPlus" Margin="203,256,8.667,57.333" FontSize="20" Click="btnPlus_Click" Content="+" Background="#FFD08215"/>
+        <TextBox x:Name="txtErgebnis" HorizontalAlignment="Left" Height="56" Margin="14,6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" FontSize="24" IsEnabled="False"/>
+        <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Height="37" Margin="15,319,0,0" VerticalAlignment="Top" Width="229" FontSize="20" Click="btnClear_Click"/>
+        <!-- TextBlock vs. Label-->
+        <!-- TextBlock vs. Label-->
+        <!-- TextBlock vs. Label-->
+        <!-- TextBlock vs. Label-->
+        <!-- TextBlock vs. Label-->
+        <!-- TextBlock vs. Label-->
+        <!-- TextBlock vs. Label-->
 
     </Grid>
 </Window>
